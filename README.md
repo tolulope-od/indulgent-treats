@@ -2,15 +2,11 @@
 Indulgent Treats is a meal booking and delivery app. It a platform where users can order food based on the available food items.
 
 # Table of Contents
-1. <a href="#pivotal-tracker">Link to Pivotal Tracker</a>
-2. <a href="#application-features">Application Features</a>
-3. <a href="#how-to-use">How To Use</a>
-4. <a href="#author">Author</a>
+1. <a href="#application-features">Application Features</a>
+2. <a href="#how-to-use">How To Use</a>
+3. <a href="#author">Author</a>
 
 
-## Link to Pivotal Tracker
-
-https://www.pivotaltracker.com/n/projects/2242861
 
 ## Application Features
 
