@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Indulgent Treats | Menu</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="#" class="logo-text">
+            Indulgent Treats
+          </a>
+        </div>
+        <div id="authListDiv" class="auth_buttons">
+          <ul class="navlinks">
+            <li><a href="index.html" class="logout-btn">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <br />
+
+    <section class="row-main">
+      <div class="container">
+        <div class="col-4 sidebar">
+          <div class="sidebar-content">
+            <h4 class="categories-style">Categories</h4>
+            <ul class="menu-history">
+              <li><a href="#">Menu</a></li>
+              <li>
+                <a id="order-history-fetch" href="orderHistory.html"
+                  >Order History</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-7 main-interface">
+          <div class="main-interface-content">
+            <div class="search-food">
+              <form class="search-meal">
+                <input
+                  type="text"
+                  name="search_meal"
+                  placeholder="Search Meal"
+                />
+                <input type="submit" name="search" value="SEARCH" />
+              </form>
+            </div>
+            <div class="menu-list-title">
+              <h4>Menu</h4>
+            </div>
+            <div id="available-meal" class="available-meal">
+              <div id="main-modal">
+                <div id="main-modal-content">
+                  <span id="closeBtn">&times;</span>
+                  <div id="display-para"></div>
+                </div>
+              </div>
+              <ul id="available-meal-list" class="available-meal-list">
+                <li>
+                  <div class="meal-image">
+                    <img
+                      src="https://res.cloudinary.com/dotmiu2lg/image/upload/v1547591900/frice.jpg"
+                    />
+                  </div>
+                  <div class="meal-name"><h4>Fried Plantain</h4></div>
+                  <div class="meal-price">
+                    <span class="price">₦2000</span
+                    ><button id="order-now-btn">ORDER NOW</button>
+                  </div>
+                </li>
+                <li>
+                  <div class="meal-image">
+                    <img
+                      src="https://res.cloudinary.com/dotmiu2lg/image/upload/v1547593537/images.jpg"
+                    />
+                  </div>
+                  <div class="meal-name"><h4>chopped Fish</h4></div>
+                  <div class="meal-price">
+                    <span class="price">₦1500</span
+                    ><button id="order-now-btn">ORDER NOW</button>
+                  </div>
+                </li>
+                <li>
+                  <div class="meal-image">
+                    <img
+                      src="https://res.cloudinary.com/dotmiu2lg/image/upload/v1547592221/crockpot-beans-500x500-kalynskitchen.jpg"
+                    />
+                  </div>
+                  <div class="meal-name"><h4>Potato Beans</h4></div>
+                  <div class="meal-price">
+                    <span class="price">₦2500</span
+                    ><button id="order-now-btn">ORDER NOW</button>
+                  </div>
+                </li>
+                <li>
+                  <div class="meal-image">
+                    <img
+                      src="https://res.cloudinary.com/dotmiu2lg/image/upload/v1547592113/ofada.jpg"
+                    />
+                  </div>
+                  <div class="meal-name"><h4>Ofada Rice</h4></div>
+                  <div class="meal-price">
+                    <span class="price">₦3500</span
+                    ><button id="order-now-btn">ORDER NOW</button>
+                  </div>
+                </li>
+                <li>
+                  <div class="meal-image">
+                    <img
+                      src="https://res.cloudinary.com/dotmiu2lg/image/upload/v1547592282/Peanut-Butter-Banana-Chia-Oatmeal-6.jpg"
+                    />
+                  </div>
+                  <div class="meal-name"><h4>Bannana Meal</h4></div>
+                  <div class="meal-price">
+                    <span class="price">₦4500</span
+                    ><button id="order-now-btn">ORDER NOW</button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="adjust-footer">
+      <div class="container">
+        <h3 class="copyright">Copyright &copy; 2019 Indulgent Treats</h3>
+      </div>
+    </footer>
+  </body>
+  <script src="js/main.js"></script>
+</html>
