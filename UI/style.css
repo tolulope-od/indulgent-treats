@@ -115,7 +115,12 @@ footer {
 }
 
 .content-description {
-  color: #2979ff;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.content-description p {
+  color: gray;
   display: flex;
   justify-content: space-evenly;
 }
@@ -123,7 +128,6 @@ footer {
 .description-header {
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  color: #2979ff;
   font-weight: bolder;
 }
 
@@ -148,6 +152,30 @@ footer {
   width: 80px;
   height: 80px;
   align-self: center;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 454px) {
+  .login-btn,
+  .register-btn {
+    position: relative;
+    bottom: 24px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 741px) {
+  .logo-text {
+    font-size: 26px;
+  }
+  .content-description {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+  }
+  .pol {
+    margin-right: 0px;
+    padding-top: 0px;
+    text-align: center;
+  }
 }
 
 /*** Auth Pages ***/
@@ -272,11 +300,18 @@ input[type="password"] {
   height: 50px;
   margin-bottom: 26px;
   border: none;
+  border-radius: 15px;
   background: #f1efef;
   padding-left: 15px;
   outline: none;
   font-family: "Montserrat", sans-serif;
 }
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border: 2px solid #2979ff;
+}
+
 input[type="submit"] {
   width: 150px;
   height: 40px;
@@ -315,6 +350,7 @@ input[type="submit"] {
   input[type="password"] {
     width: 198px;
     height: 35px;
+    border-radius: 10px;
     margin-bottom: 13px;
     border: none;
     background: whitesmoke;
@@ -323,6 +359,7 @@ input[type="submit"] {
   input[type="submit"] {
     width: 101px;
     height: 26px;
+    border-radius: 35px;
     margin: auto;
     display: block;
     font-size: 16px;
@@ -333,3 +370,5 @@ input[type="submit"] {
     font-size: 14px;
   }
 }
+
+/**** Edit Food Menu ****/
