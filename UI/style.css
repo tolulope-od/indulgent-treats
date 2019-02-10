@@ -577,3 +577,57 @@ input[type="submit"] {
     .order-cont {margin-right: 44px;}
     .order-disp {margin-right: 41px;}
 }
+
+
+/******** Edit Menu ************/
+.dashboard-style {
+    margin: 0px;
+    padding-left: 15px;
+    font-size: 19px;
+    margin-bottom: 12px;
+    color: #2979ff;
+}
+.orders-new {list-style: none; padding-left: 0px;}
+.orders-new li {border-bottom: 1px solid #e6dede; padding: 17px 0px 20px 16px;}
+.orders-new li a {text-decoration: none; font-size: 14px; color: #504f02;}
+.add-new-food {display: grid; justify-content: center; margin-bottom: 60px;}
+.add-food-name, .add-food-price, .add-food-image {color: #504f02;}
+.add-food-image {margin-bottom: 25px;}
+.add-food-name input {border: 1px solid green; display: block;}
+.add-food-price input {border: 1px solid green; display: block;}
+.add-food-image input {border: 1px solid green; display: block;}
+.add-food-button input {display: block; margin: auto;}
+.admin-food-edit {
+    border-radius: 4px !important;
+    text-decoration: none;
+}
+.admin-food-delete {
+    background: #d04040 !important;
+    border-radius: 4px !important;
+}
+
+/*******************Site modal************************/
+#confirm-order-error-modal {display: none;}
+#order-history-modal {display: none;}
+
+#main-modal {display: none; margin: 20px 0px;}
+#main-modal-content {
+    width: 50%;
+    margin: auto;
+    padding: 10px 10px;
+    background: #f17878;
+    color: white;
+}
+#display-para p {margin: 0px;}
+#closeBtn {float: right;}
+
+#complete-modal {display: none; margin: 20px 0px;}
+#complete-modal-content {
+    width: 50%;
+    margin: auto;
+    padding: 10px 10px;
+    background: #f17878;
+    color: white;
+}
+#complete-display-para p {margin: 0px;}
+#complete-closeBtn {float: right;}
