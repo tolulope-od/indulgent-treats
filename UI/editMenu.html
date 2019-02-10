@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Indulgent Treats | Edit Menu Options</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#" class="logo-text">
+                    Indulgent Treats
+                </a>
+            </div>
+            <div id="authListDiv" class="auth_buttons">
+                <ul class="navlinks">
+                    <li><a href="index.html" class="logout-btn">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br />
+
+    <section class="row-main">
+      <div class="container">
+        <div class="col-2 sidebar">
+          <div class="sidebar-content">
+            <h4 class="dashboard-style">Dashboard</h4>
+            <ul class="orders-new">
+              <li><a href="ordersList.html">Orders</a></li>
+              <li><a href="foodMenu.html">New Menu</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-9 main-interface">
+          <div class="main-interface-content">
+            <div class="order-history-text">
+              <h4>Edit Food Item</h4>
+              <div class="add-new-food">
+                <div id="complete-modal">
+                  <div id="complete-modal-content">
+                    <span id="complete-closeBtn">&times;</span>
+                    <div id="complete-display-para">
+                    </div>
+                  </div>
+                </div>
+                <form id="edit-food-form" class="add-food-form">
+                  <div class="add-food-name">
+                    <label>Food Name:</label>
+                    <input type="text" id="menu-food-name" name="food-name">
+                  </div>
+                  <div class="add-food-price">
+                    <label>Food Price:</label>
+                    <input type="text" id="menu-food-price" name="food-price">
+                  </div>
+                  <div class="add-food-image">
+                    <label>Food Image URL:</label>
+                    <input type="text" id="menu-food-image" name="food-image-url">
+                  </div>
+                  <div class="add-food-button">
+                    <input type="submit" id="menu-food-add" name="submit" value="Add Food">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="order-history-text">
+              <h4>Manage Food Items</h4>
+              <div class="available-meal">
+                <div id="main-modal">
+                  <div id="main-modal-content">
+                    <span id="closeBtn">&times;</span>
+                    <div id="display-para">
+                    </div>
+                  </div>
+                </div>
+                <ul id="available-meal-list" class="available-meal-list">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="adjust-footer">
+        <div class="container">
+            <h3 class="copyright">Copyright &copy; 2019 Indulgent Treats</h3>
+        </div>
+    </footer>
+</body>
+<script src="js/main.js"></script>
+
+</html>
