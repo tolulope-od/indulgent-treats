@@ -35,7 +35,7 @@
             <h4 class="dashboard-style">Dashboard</h4>
             <ul class="orders-new">
               <li><a href="ordersList.html">Orders</a></li>
-              <li><a href="foodMenu.html">New Menu</a></li>
+              <li><a href="foodMenu.html">New Items</a></li>
             </ul>
           </div>
         </div>
@@ -44,28 +44,21 @@
             <div class="order-history-text">
               <h4>Edit Food Item</h4>
               <div class="add-new-food">
-                <div id="complete-modal">
-                  <div id="complete-modal-content">
-                    <span id="complete-closeBtn">&times;</span>
-                    <div id="complete-display-para">
-                    </div>
-                  </div>
-                </div>
-                <form id="edit-food-form" class="add-food-form">
+                <form class="add-food-form">
                   <div class="add-food-name">
                     <label>Food Name:</label>
-                    <input type="text" id="menu-food-name" name="food-name">
+                    <input type="text" name="food-name" placeholder="Jollof Rice">
                   </div>
                   <div class="add-food-price">
                     <label>Food Price:</label>
-                    <input type="text" id="menu-food-price" name="food-price">
+                    <input type="text" name="food-price" placeholder="400.00">
                   </div>
                   <div class="add-food-image">
-                    <label>Food Image URL:</label>
-                    <input type="text" id="menu-food-image" name="food-image-url">
+                    <label>Food Image:</label>
+                    <input type="file" name="food-image" accept="image/*">
                   </div>
                   <div class="add-food-button">
-                    <input type="submit" id="menu-food-add" name="submit" value="Add Food">
+                    <input type="submit" name="submit" value="Update Food">
                   </div>
                 </form>
               </div>
@@ -73,14 +66,72 @@
             <div class="order-history-text">
               <h4>Manage Food Items</h4>
               <div class="available-meal">
-                <div id="main-modal">
-                  <div id="main-modal-content">
-                    <span id="closeBtn">&times;</span>
-                    <div id="display-para">
+                <ul class="available-meal-list">
+                  <li>
+                    <div class="meal-image">
+                      <img src="./img/jrice.jpg">
                     </div>
-                  </div>
-                </div>
-                <ul id="available-meal-list" class="available-meal-list">
+                    <div class="meal-name">
+                      <h4>Jollof Rice</h4>
+                    </div>
+                    <div class="meal-price">
+                      <span class="price">₦400.00</span>
+                      <a class="admin-food-edit" href="#">Edit</a>
+                      <a class="admin-food-delete" href="#">Delete</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="meal-image">
+                      <img src="./img/frice.jpg">
+                    </div>
+                    <div class="meal-name">
+                      <h4>Fried Rice</h4>
+                    </div>
+                    <div class="meal-price">
+                      <span class="price">₦600.00</span>
+                      <a class="admin-food-edit" href="#">Edit</a>
+                      <a class="admin-food-delete" href="#">Delete</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="meal-image">
+                      <img src="./img/pizza.jpg">
+                    </div>
+                    <div class="meal-name">
+                      <h4>Pizza</h4>
+                    </div>
+                    <div class="meal-price">
+                      <span class="price">₦700.00</span>
+                      <a class="admin-food-edit" href="#">Edit</a>
+                      <a class="admin-food-delete" href="#">Delete</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="meal-image">
+                      <img src="./img/chips.jpg">
+                    </div>
+                    <div class="meal-name">
+                      <h4>Chicken & Chips</h4>
+                    </div>
+                    <div class="meal-price">
+                      <span class="price">₦500.00</span>
+                      <a class="admin-food-edit" href="#">Edit</a>
+                      <a class="admin-food-delete" href="#">Delete</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="meal-image">
+                      <img src="./img/burger.jpg">
+                    </div>
+                    <div class="meal-name">
+                      <h4>Hamburger</h4>
+                    </div>
+                    <div class="meal-price">
+                      <span class="price">₦800.00</span>
+                      <a class="admin-food-edit" href="#">Edit</a>
+                      <a class="admin-food-delete" href="#">Delete</a>
+                    </div>
+                  </li>
                 </ul>
               </div>
             </div>
