@@ -547,10 +547,10 @@ input[type="submit"] {
 .status-cont {width: 130px;}
 .amount-cont {width: 101px;}
 
-.flex-body {list-style: none; padding: 0px; color: #b5335d; margin: 0px;}
+.flex-body {list-style: none; padding: 0px; color: black; margin: 0px;}
 .flex-body li {display: flex; flex-wrap: nowrap; padding: 10px 0px;}
 .order-disp {width: 100px;}
-.order-disp a {color: #b5335d;}
+.order-disp a {color: black;}
 .order-name-disp {width: 140px;}
 .date-disp {width: 140px;}
 .status-disp {width: 130px;}
@@ -605,6 +605,56 @@ input[type="submit"] {
     background: #d04040 !important;
     border-radius: 4px !important;
 }
+
+/**** Orders Page ******/
+.order-name-cont {width: 171px;}
+.action-cont {width: 143px !important;}
+.customer-cont {width: 143px;}
+.amount-display {width: 143px;}
+.action-customer {width: 143px;}
+.left-acc {    
+    background: green;
+    border: none;
+    width: 60px;
+    height: 25px;
+    color: white;
+    outline: none;
+}
+.right-dec {
+    background: #bf3939;
+    border: none;
+    width: 60px;
+    height: 25px;
+    color: white;
+    outline: none;
+}
+.complete-cont input {float: left;}
+#text {float: left; margin: 0px; margin-left: 10px; display: none;}
+
+.orders-new {list-style: none; padding-left: 0px;}
+.orders-new li {border-bottom: 1px solid #e6dede; padding: 17px 0px 20px 16px;}
+.orders-new li a {text-decoration: none; font-size: 14px; color: #504f02;}
+
+@media only screen and (min-width : 320px) and (max-width : 426px) {
+    .orders-new {display: flex; padding-left: 7px;}
+    .orders-new li {padding: 17px 44px 22px 16px; border: 1px solid #e6dede;}
+    .flex-container {display: none;}
+    .flex-body li {display: grid; width: 100%; border-bottom: 1px solid #bfbdbd;}
+    .flex-body li div {margin-bottom: 7px;}
+}
+@media only screen and (min-width : 427px) and (max-width : 1109px) {
+    .orders-new {display: flex; padding-left: 7px;}
+    .orders-new li {padding: 17px 44px 22px 16px; border: 1px solid #e6dede;}
+    .flex-container {display: none;}
+    .flex-body li {display: grid; width: 100%; border-bottom: 1px solid #bfbdbd;}
+    .flex-body li div {margin-bottom: 7px;}
+}
+@media only screen and (min-width : 1112px) {
+    .order-cont {width: 28%;}
+    .order-name-cont {width: 22%;}
+    .action-cont {width: 25%;}
+}
+
 
 /*******************Site modal************************/
 #confirm-order-error-modal {display: none;}
