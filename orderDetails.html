@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Indulgent Treats | View Orders</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#" class="logo-text">
+                    Indulgent Treats
+                </a>
+            </div>
+            <div id="authListDiv" class="auth_buttons">
+                <ul class="navlinks">
+                    <li><a href="index.html" class="logout-btn">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br />
+
+    <section class="row-main">
+      <div class="container">
+        <div class="col-2 sidebar">
+          <div class="sidebar-content">
+            <h4 class="dashboard-style">Dashboard</h4>
+            <ul class="orders-new">
+              <li><a href="orderList.html">Orders</a></li>
+              <li><a href="foodMenu.html">New Menu</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-9 main-interface">
+          <div class="main-interface-content">
+            <div class="order-history-text">
+              <h4 class="order-number-style">Order Number:</h4>
+              <div class="theorder">#wdsfhjfheuie44545t</div>
+            </div>
+            <div class="order-details-body">
+              <div>
+                <h5 class="order-details-text">Order Name:</h5>
+                <div class="fetchname">Jollof Rice</div>
+              </div>
+              <div>
+                <h5 class="order-details-text">Amount:</h5>
+                <div class="fetchamount">₦400.00</div>
+              </div>
+              <div>
+                <h5 class="order-details-text">Status:</h5>
+                <div class="updatestatus">
+                  <select style="width: 100%; height: 28px;">
+                    <option value="processing">Proccessing</option>
+                    <option value="completed">Completed</option>
+                    <option value="cancel">Cancelled</option>
+                  </select>
+                </div>
+                <div>
+                  <div class="button-action">
+                    <button class="updateOrder">UPDATE</button>
+                    <button class="deleteOrder">CANCEL</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <footer class="adjust-footer">
+        <div class="container">
+            <h3 class="copyright">Copyright &copy; 2019 Indulgent Treats</h3>
+        </div>
+    </footer>
+</body>
+<script src="js/main.js"></script>
+
+</html>
