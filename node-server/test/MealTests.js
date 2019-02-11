@@ -8,10 +8,9 @@ const { expect } = chai;
 describe('Get all Meals', () => {
   describe('Retrieve All Meal Options', () => {
     it('Should return all meal options as objects in an array', () => {
-      const meals = new MealsService();
-      const { getAll } = meals;
+      const meals = new MealsService().fetchAllMeals();
 
-      expect(getAll).to.equal([
+      expect(meals).to.deep.equal([
         {
           id: 1,
           name: 'Jollof Rice',
@@ -40,7 +39,7 @@ describe('Get all Meals', () => {
     it('Should return one meal option object based on the id', () => {
       const meal = new MealsService().get(1);
 
-      expect(meal).to.equal({
+      expect(meal).to.deep.equal({
         id: 1,
         name: 'Jollof Rice',
         size: 'plates',
