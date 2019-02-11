@@ -775,6 +775,37 @@ input[type="submit"] {
 }
 
 
+/****** Confirm Order Page **********/
+.confirm-order-card {
+    width: 40%;
+    border: 1px solid #9a8686;
+    padding: 18px;
+    box-shadow: 1px 1px 6px 3px grey;
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+}
+.confirm-order-card-text {color: #2979ff;}
+.confirm-order-food-name {
+    margin: 0px;
+    float: right;
+    margin-top: 73px;
+    font-size: 23px;
+    padding-right: 30px;
+}
+.confirm-order-select {margin: 18px 0px;}
+.confirm-order-select h4 {color: #2979ff; margin: 0px}
+.complete-order-link {margin-bottom: 10px;}
+.complete-order-link a {
+    background: #39593e;
+    color: white;
+    text-decoration: none;
+    padding: 7px 5px;
+    border-radius: 7px;
+}
+select.slect-style {width: 80px; margin-top: 7px;}
+
+
 /*******************Site modal************************/
 #confirm-order-error-modal {display: none;}
 #order-history-modal {display: none;}
