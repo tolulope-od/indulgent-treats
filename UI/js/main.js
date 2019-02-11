@@ -1,6 +1,11 @@
-/* Login/Sign up page */
+const modal = document.getElementById('simpleModal');
+const orderBttn = document.getElementById('bttn-order');
+const noButtn = document.getElementById('modal-button-no'); 
 
-const showLogInForm = () => {
-  const logInMenu = document.getElementById("login_menu");
-  logInMenu.classList.toggle("visible");
-};
+
+const openModal =  () => {
+	modal.style.display = 'block';
+}
+const closeModal = () => {
+	modal.style.display = 'none';
+}

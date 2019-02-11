@@ -402,34 +402,31 @@ input[type="submit"] {
 .main-interface-content {float: left; width: 100%; background: #f3f3f3; box-shadow: 0px 5px 23px #cdd0cd; padding: 35px 0px 35px 30px;}
 .search-food, .menu-list-title, .available-meal {float: left; width: 100%;}
 .search-food {margin-bottom: 30px;}
-.search-meal input[type="text"] {width: 479px; border-radius: 25px; background: #d0cdcd;}
-.search-meal input[type="submit"] {width: 15.4%; font-size: 16px; color: white; margin-left: 5px;}
+.search-meal input[type="text"] {width: 479px; background: #d0cdcd;}
+.search-meal input[type="submit"] {width: 15.4%; font-size: 16px; color: white;}
 .menu-list-title h4 {
     margin: 0px;
     padding-left: 15px;
-    font-size: 25px;
+    font-size: 19px;
     color: #2979ff;
 }
-
 .available-meal-list {padding: 0px; list-style: none;}
 .available-meal-list li {display: inline-block; width: 100%; padding: 25px 0px; border-bottom: 1px solid #e8e3e3;}
 .meal-image {float: left; margin-right: 4%;}
-.meal-image img {width: 170px; height: 127px;}
+.meal-image img {width: 170px;}
 .meal-name {float: left; margin-right: 23%; width: 91px;}
 .meal-name h4 {font-size: 20px;}
 .meal-price {float: left; padding-top: 40px;}
 .price {margin-right: 17px; font-style: italic;}
-#order-now-btn, #edit-now-btn, #delete-now-btn {
-    border: none;
-    outline: none;
-    cursor: pointer;   
+.meal-price a {
+    text-decoration: none;    
     padding: 7px 5px;
     background: #39593e;
     color: white;
     border-radius: 20px;
     text-decoration: none;
     font-weight: 500;
-    font-size: 11px;
+    font-size: 13px;
 }
 #bttn-order {
     text-decoration: none;    
@@ -454,6 +451,7 @@ input[type="submit"] {
     right: 231px;
     border-radius: 20px;
 }
+
 .modal-confirm {margin: 0px 0px 26px 0px;}
 .modal-button-yes {
     border: 1px solid #39593e;
@@ -472,10 +470,9 @@ input[type="submit"] {
     color: white;
     border-radius: 9px;
 }
-#complete-order {cursor: pointer;}
 
 @media only screen and (min-width : 320px) and (max-width : 480px) {
-    .logo-text {font-size: 20px;}
+    .logo-name-style {font-size: 27px;}
     .sidebar {width: 100% !important; justify-content: center; padding: 0px !important;}
     .main-interface {width: 90% !important; justify-content: center; padding: 0px !important;}
     .menu-history {display: flex; padding-left: 7px;}
@@ -487,10 +484,9 @@ input[type="submit"] {
     .available-meal-list {display: grid; width: 100%; justify-content: center;}
     .meal-name h4 {margin-bottom: 0px;}
     .meal-price {padding-top: 21px;}
-    .logout-btn { margin-top: 15px; font-size: 10px; border: 1px solid #ffffff; width: 60px; height: 20px; line-height: 17px; margin-top: 20px}
 }
 @media only screen and (min-width : 481px) and (max-width : 656px) {
-    .logo-text {font-size: 26px;}
+    .logo-name-style {font-size: 27px;}
     .sidebar {width: 100% !important; justify-content: center; padding: 0px !important;}
     .main-interface {width: 90% !important; justify-content: center; padding: 0px !important;}
     .menu-history {display: flex; padding-left: 7px;}
@@ -504,7 +500,7 @@ input[type="submit"] {
     .meal-price {margin-right: 130px; padding-top: 18px;}
 }
 @media only screen and (min-width : 656px) and (max-width : 776px) {
-    .logo-text {font-size: 26px;}
+    .logo-name-style {font-size: 27px;}
     .sidebar {width: 100% !important; justify-content: center; padding: 0px !important;}
     .main-interface {width: 90% !important; justify-content: center; padding: 0px !important;}
     .menu-history {display: flex; padding-left: 7px;}
@@ -518,7 +514,7 @@ input[type="submit"] {
     .meal-price {margin-right: 105px; padding-top: 0px;}
 }
 @media only screen and (min-width : 777px) and (max-width : 1110px) {
-    .logo-text {font-size: 26px;}
+    .logo-name-style {font-size: 27px;}
     .sidebar {width: 100% !important; justify-content: center; padding: 0px !important;}
     .main-interface {width: 90% !important; justify-content: center; padding: 0px !important;}
     .menu-history {display: flex; padding-left: 7px;}
@@ -531,9 +527,11 @@ input[type="submit"] {
     .meal-name {margin-right: 0px !important;}
 }
 @media only screen and (min-width : 1111px) and (max-width : 1329px) {
-    .logo-text {font-size: 26px;}
+    .logo-name-style {font-size: 27px;}
     .meal-price {padding: 0px; margin-right: 25px;}
 }
+
+
 
 /**** Order History Page ****/
 .order-history-text, .flex-container, .flex-body {float: left; width: 100%;}
@@ -656,6 +654,158 @@ input[type="submit"] {
 }
 
 
+/******* Order Details Page ******/
+.order-number-style {float: left; margin: 0px; font-size: 19px; margin-bottom: 40px; color: #d04040;}
+.theorder {float: left; margin-left: 20px; font-size: 20px; font-style: italic; font-weight: 600; color: #504f02;}
+.order-details-body {display: grid; width: 96%;}
+.order-details-text {margin: 15px 0px; color: #504f02;}
+.fetchname, .fetchamount, .updatestatus {color: #65b22b; background: #e8eae2; padding: 22px 15px;}
+.input-float {float: left; position: relative; bottom: 9px;}
+#textPend {
+    float: left;
+    position: relative;
+    bottom: 11px;
+    left: 50px;
+    color: #8e7c7c;;
+    margin: 0px;
+}
+#text {
+    float: left;
+    position: relative;
+    bottom: 11px;
+    left: 50px;
+    color: green;
+    margin: 0px;
+    display: none;
+}
+.box-holder {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.box-holder input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 19px;
+    width: 19px;
+    background-color: white;
+    border: 1px solid #bcb8b8;
+}
+.box-holder:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.box-holder input:checked ~ .checkmark {
+    background-color: green;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.box-holder input:checked ~ .checkmark:after {
+    display: block;
+}
+.box-holder .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.button-action {text-align: center; padding-top: 23px;}
+.updateOrder {
+    background: green;
+    border: none;
+    width: 82px;
+    height: 35px;
+    color: white;
+    outline: none;
+    border-radius: 7px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.deleteOrder {
+    background: #bf3939;
+    border: none;
+    width: 82px;
+    height: 35px;
+    color: white;
+    outline: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+@media only screen and (min-width : 320px) and (max-width : 509px) {
+    .order-history-text {margin-bottom: 20px;}
+    .order-number-style {margin-bottom: 7px !important;}
+    .theorder {margin-left: 0px; margin-right: 85px;}
+    .order-details-body {width: 94%;}
+    .fetchname, .fetchamount, .updatestatus {padding: 10px 8px;}
+    .checkmark {top: -4px;}
+    #textPend, #text {bottom: 17px;}
+    .button-action {padding-top: 10px;}
+}
+@media only screen and (min-width : 510px) and (max-width : 1110px) {
+    .order-history-text {margin-bottom: 20px;}
+    .order-number-style {margin-bottom: 7px !important;}
+    .order-details-body {width: 94%;}
+    .fetchname, .fetchamount, .updatestatus {padding: 10px 8px;}
+    .checkmark {top: -4px;}
+    #textPend, #text {bottom: 17px;}
+    .button-action {padding-top: 10px;}
+}
+
+
+/****** Confirm Order Page **********/
+.confirm-order-card {
+    width: 40%;
+    border: 1px solid #9a8686;
+    padding: 18px;
+    box-shadow: 1px 1px 6px 3px grey;
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+}
+.confirm-meal-image {margin-right: 4%;}
+.confirm-meal-image img {width: 170px;}
+.confirm-order-card-text {color: #2979ff;}
+.confirm-order-food-name {
+    margin: 0px;
+    float: right;
+    margin-top: 73px;
+    font-size: 23px;
+    padding-right: 30px;
+}
+.confirm-order-select {margin: 18px 0px;}
+.confirm-order-select h4 {color: #2979ff; margin: 0px}
+.complete-order-link {margin-bottom: 10px;}
+.complete-order-link a {
+    background: #39593e;
+    color: white;
+    text-decoration: none;
+    padding: 7px 5px;
+    border-radius: 7px;
+}
+select.slect-style {width: 80px; margin-top: 7px;}
+
+
 /*******************Site modal************************/
 #confirm-order-error-modal {display: none;}
 #order-history-modal {display: none;}
@@ -681,3 +831,9 @@ input[type="submit"] {
 }
 #complete-display-para p {margin: 0px;}
 #complete-closeBtn {float: right;}
+
+/******* Error page ********/
+
+.error-page {background: #6e966e;}
+.error-error {font-size: 50px;}
+.error-page-description {background: #ebebeb;}
