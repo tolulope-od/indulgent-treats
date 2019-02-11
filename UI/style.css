@@ -656,6 +656,125 @@ input[type="submit"] {
 }
 
 
+/******* Order Details Page ******/
+.order-number-style {float: left; margin: 0px; font-size: 19px; margin-bottom: 40px; color: #d04040;}
+.theorder {float: left; margin-left: 20px; font-size: 20px; font-style: italic; font-weight: 600; color: #504f02;}
+.order-details-body {display: grid; width: 96%;}
+.order-details-text {margin: 15px 0px; color: #504f02;}
+.fetchname, .fetchamount, .updatestatus {color: #65b22b; background: #e8eae2; padding: 22px 15px;}
+.input-float {float: left; position: relative; bottom: 9px;}
+#textPend {
+    float: left;
+    position: relative;
+    bottom: 11px;
+    left: 50px;
+    color: #8e7c7c;;
+    margin: 0px;
+}
+#text {
+    float: left;
+    position: relative;
+    bottom: 11px;
+    left: 50px;
+    color: green;
+    margin: 0px;
+    display: none;
+}
+.box-holder {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.box-holder input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 19px;
+    width: 19px;
+    background-color: white;
+    border: 1px solid #bcb8b8;
+}
+.box-holder:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.box-holder input:checked ~ .checkmark {
+    background-color: green;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.box-holder input:checked ~ .checkmark:after {
+    display: block;
+}
+.box-holder .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.button-action {text-align: center; padding-top: 23px;}
+.updateOrder {
+    background: green;
+    border: none;
+    width: 82px;
+    height: 35px;
+    color: white;
+    outline: none;
+    border-radius: 7px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.deleteOrder {
+    background: #bf3939;
+    border: none;
+    width: 82px;
+    height: 35px;
+    color: white;
+    outline: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+@media only screen and (min-width : 320px) and (max-width : 509px) {
+    .order-history-text {margin-bottom: 20px;}
+    .order-number-style {margin-bottom: 7px !important;}
+    .theorder {margin-left: 0px; margin-right: 85px;}
+    .order-details-body {width: 94%;}
+    .fetchname, .fetchamount, .updatestatus {padding: 10px 8px;}
+    .checkmark {top: -4px;}
+    #textPend, #text {bottom: 17px;}
+    .button-action {padding-top: 10px;}
+}
+@media only screen and (min-width : 510px) and (max-width : 1110px) {
+    .order-history-text {margin-bottom: 20px;}
+    .order-number-style {margin-bottom: 7px !important;}
+    .order-details-body {width: 94%;}
+    .fetchname, .fetchamount, .updatestatus {padding: 10px 8px;}
+    .checkmark {top: -4px;}
+    #textPend, #text {bottom: 17px;}
+    .button-action {padding-top: 10px;}
+}
+
+
 /*******************Site modal************************/
 #confirm-order-error-modal {display: none;}
 #order-history-modal {display: none;}
