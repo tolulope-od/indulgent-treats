@@ -37,11 +37,7 @@
             <h4 class="categories-style">Categories</h4>
             <ul class="menu-history">
               <li><a href="#">Menu</a></li>
-              <li>
-                <a id="order-history-fetch" href="orderHistory.html"
-                  >Order History</a
-                >
-              </li>
+              <li><a href="orderHistory.html">Order History</a></li>
             </ul>
           </div>
         </div>
@@ -49,83 +45,81 @@
           <div class="main-interface-content">
             <div class="search-food">
               <form class="search-meal">
-                <input
-                  type="text"
-                  name="search_meal"
-                  placeholder="Search Meal"
-                />
-                <input type="submit" name="search" value="SEARCH" />
+                <input type="text" name="search_meal" placeholder="Search Meal">
+                <input type="submit" name="search" value="SEARCH">
               </form>
             </div>
             <div class="menu-list-title">
               <h4>Menu</h4>
             </div>
-            <div id="available-meal" class="available-meal">
-              <div id="main-modal">
-                <div id="main-modal-content">
-                  <span id="closeBtn">&times;</span>
-                  <div id="display-para"></div>
-                </div>
-              </div>
-              <ul id="available-meal-list" class="available-meal-list">
+            <div class="available-meal">
+              <ul class="available-meal-list">
                 <li>
                   <div class="meal-image">
-                    <img
-                      src="https://res.cloudinary.com/dotmiu2lg/image/upload/v1547591900/frice.jpg"
-                    />
+                    <img src="./images/jrice.jpg">
                   </div>
-                  <div class="meal-name"><h4>Fried Plantain</h4></div>
+                  <div class="meal-name">
+                    <h4>Jollof Rice</h4>
+                  </div>
                   <div class="meal-price">
-                    <span class="price">₦2000</span
-                    ><button id="order-now-btn">ORDER NOW</button>
+                    <span class="price">₦400.00</span>
+                    <a onclick="openModal()" href="#">ORDER NOW</a>
+                  </div>
+                  <div id="simpleModal">
+                    <div class="modal-content">
+                      <h3 class="modal-confirm">Confirm Order?</h3>
+                      <a class="modal-button-yes" href="confirmOrder.html">Yes</a>
+                      <a onclick="closeModal()" id="modal-button-no" href="#">No</a>
+                    </div>
                   </div>
                 </li>
                 <li>
                   <div class="meal-image">
-                    <img
-                      src="https://res.cloudinary.com/dotmiu2lg/image/upload/v1547593537/images.jpg"
-                    />
+                    <img src="./images/frice.jpg">
                   </div>
-                  <div class="meal-name"><h4>chopped Fish</h4></div>
+                  <div class="meal-name">
+                    <h4>Fried Rice</h4>
+                  </div>
                   <div class="meal-price">
-                    <span class="price">₦1500</span
-                    ><button id="order-now-btn">ORDER NOW</button>
+                    <span class="price">₦600.00</span>
+                    <a onclick="openModal()" href="#">ORDER NOW</a>
                   </div>
                 </li>
                 <li>
                   <div class="meal-image">
-                    <img
-                      src="https://res.cloudinary.com/dotmiu2lg/image/upload/v1547592221/crockpot-beans-500x500-kalynskitchen.jpg"
-                    />
+                    <img src="./images/pizza.jpg">
                   </div>
-                  <div class="meal-name"><h4>Potato Beans</h4></div>
+                  <div class="meal-name">
+                    <h4>Pizza</h4>
+                  </div>
                   <div class="meal-price">
-                    <span class="price">₦2500</span
-                    ><button id="order-now-btn">ORDER NOW</button>
+                    <span class="price">₦2,400.00</span>
+                    <a onclick="openModal()" href="#">ORDER NOW</a>
                   </div>
                 </li>
                 <li>
                   <div class="meal-image">
-                    <img
-                      src="https://res.cloudinary.com/dotmiu2lg/image/upload/v1547592113/ofada.jpg"
-                    />
+                    <img src="./images/chips.jpg">
                   </div>
-                  <div class="meal-name"><h4>Ofada Rice</h4></div>
+                  <div class="meal-name">
+                    <h4>Chicken & Chips</h4>
+                  </div>
                   <div class="meal-price">
-                    <span class="price">₦3500</span
-                    ><button id="order-now-btn">ORDER NOW</button>
+                    <span class="price">₦1,500.00</span>
+                    <a onclick="openModal()" href="#">ORDER NOW</a>
                   </div>
                 </li>
                 <li>
                   <div class="meal-image">
-                    <img
-                      src="https://res.cloudinary.com/dotmiu2lg/image/upload/v1547592282/Peanut-Butter-Banana-Chia-Oatmeal-6.jpg"
-                    />
+                    <img src="./images/burger.jpg">
                   </div>
-                  <div class="meal-name"><h4>Bannana Meal</h4></div>
+                  <div class="meal-name">
+                    <h4>Hamburger</h4>
+                  </div>
                   <div class="meal-price">
-                    <span class="price">₦4500</span
-                    ><button id="order-now-btn">ORDER NOW</button>
+                    <span class="price">₦1,800.00</span>
+                    <a onclick="openModal()" href="#">ORDER NOW</a>
+    
                   </div>
                 </li>
               </ul>
@@ -134,6 +128,7 @@
         </div>
       </div>
     </section>
+    
     <footer class="adjust-footer">
       <div class="container">
         <h3 class="copyright">Copyright &copy; 2019 Indulgent Treats</h3>
