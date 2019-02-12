@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Indulgent Treats | Menu</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Montserrat"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="#" class="logo-text">
+            Indulgent Treats
+          </a>
+        </div>
+        <div id="authListDiv" class="auth_buttons">
+          <ul class="navlinks">
+            <li><a href="index.html" class="logout-btn">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <br />
+
+    <section class="row-main">
+      <div class="container">
+        <div class="col-4 sidebar">
+          <div class="sidebar-content">
+            <h4 class="categories-style">Categories</h4>
+            <ul class="menu-history">
+              <li><a href="#">Menu</a></li>
+              <li><a href="orderHistory.html">Order History</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-7 main-interface">
+          <div class="main-interface-content">
+            <div class="search-food">
+              <form class="search-meal">
+                <input type="text" name="search_meal" placeholder="Search Meal">
+                <input type="submit" name="search" value="SEARCH">
+              </form>
+            </div>
+            <div class="menu-list-title">
+              <h4>Menu</h4>
+            </div>
+            <div class="available-meal">
+              <ul class="available-meal-list">
+                <li>
+                  <div class="meal-image">
+                    <img src="./images/jrice.jpg">
+                  </div>
+                  <div class="meal-name">
+                    <h4>Jollof Rice</h4>
+                  </div>
+                  <div class="meal-price">
+                    <span class="price">₦400.00</span>
+                    <a onclick="openModal()" href="#">ORDER NOW</a>
+                  </div>
+                  <div id="simpleModal">
+                    <div class="modal-content">
+                      <h3 class="modal-confirm">Confirm Order?</h3>
+                      <a class="modal-button-yes" href="confirmOrder.html">Yes</a>
+                      <a onclick="closeModal()" id="modal-button-no" href="#">No</a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="meal-image">
+                    <img src="./images/frice.jpg">
+                  </div>
+                  <div class="meal-name">
+                    <h4>Fried Rice</h4>
+                  </div>
+                  <div class="meal-price">
+                    <span class="price">₦600.00</span>
+                    <a onclick="openModal()" href="#">ORDER NOW</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="meal-image">
+                    <img src="./images/pizza.jpg">
+                  </div>
+                  <div class="meal-name">
+                    <h4>Pizza</h4>
+                  </div>
+                  <div class="meal-price">
+                    <span class="price">₦2,400.00</span>
+                    <a onclick="openModal()" href="#">ORDER NOW</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="meal-image">
+                    <img src="./images/chips.jpg">
+                  </div>
+                  <div class="meal-name">
+                    <h4>Chicken & Chips</h4>
+                  </div>
+                  <div class="meal-price">
+                    <span class="price">₦1,500.00</span>
+                    <a onclick="openModal()" href="#">ORDER NOW</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="meal-image">
+                    <img src="./images/burger.jpg">
+                  </div>
+                  <div class="meal-name">
+                    <h4>Hamburger</h4>
+                  </div>
+                  <div class="meal-price">
+                    <span class="price">₦1,800.00</span>
+                    <a onclick="openModal()" href="#">ORDER NOW</a>
+    
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <footer class="adjust-footer">
+      <div class="container">
+        <h3 class="copyright">Copyright &copy; 2019 Indulgent Treats</h3>
+      </div>
+    </footer>
+  </body>
+  <script src="js/main.js"></script>
+</html>
