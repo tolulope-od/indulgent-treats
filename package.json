@@ -3,9 +3,17 @@
   "version": "1.0.0",
   "description": "Meal Booking App",
   "main": "index.js",
+  "nyc": {
+    "require": [
+      "@babel/register"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  },
   "scripts": {
     "start": "nodemon --exec babel-node index.js",
-    "test": "./node_modules/.bin/mocha --exit --timeout 10000 --reporter spec --compilers js:@babel/register"
+    "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text-lcov ./node_modules/.bin/mocha --exit --timeout 10000 --reporter spec --compilers js:@babel/register",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -19,6 +27,8 @@
   "homepage": "https://github.com/tolulope-od/indulgent-treats#readme",
   "dependencies": {
     "chai": "^4.2.0",
+    "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "mocha": "^5.2.0",
@@ -28,6 +38,7 @@
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
+    "babel-plugin-istanbul": "^5.1.0",
     "eslint": "^5.13.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",

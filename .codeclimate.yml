@@ -1,0 +1,6 @@
+version: "2" # required to adjust maintainability checkss
+checks:
+  similar-code:
+    enabled: false
+  identical-code:
+    enabled: false
