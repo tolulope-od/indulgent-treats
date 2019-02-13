@@ -76,4 +76,19 @@ describe('Access Meals Service', () => {
       ]);
     });
   });
+  describe('Add one meal', () => {
+    it('Should add a meal to the existing meals and return the new meal', () => {
+      const newMeal = { name: 'Beans', size: 'Medium', price: '250' };
+      const meal = MealsService.addMeal(newMeal);
+
+      expect(meal).to.deep.equal(
+        {
+          id: 5,
+          name: 'Beans',
+          size: 'Medium',
+          price: '250',
+        },
+      );
+    });
+  });
 });
