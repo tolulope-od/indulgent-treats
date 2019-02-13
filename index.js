@@ -1,5 +1,5 @@
 import express from 'express';
-import mealsRoute from './routes/mealsRoute';
+import mealsRoute from './server/routes/mealsRoute';
 
 // Set up the app with express
 const app = express();
