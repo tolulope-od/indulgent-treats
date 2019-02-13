@@ -1,6 +1,13 @@
 # Indulgent Treats
 
-Indulgent Treats is a meal booking and delivery app. It a platform where users can order food based on the available food items.
+Indulgent Treats is a meal booking and delivery app. It's a platform where users can order food based on the available food items.
+
+[![Build Status](https://travis-ci.org/tolulope-od/indulgent-treats.svg?branch=develop)](https://travis-ci.org/tolulope-od/indulgent-treats)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/29891876508099425779/maintainability)](https://codeclimate.com/github/tolulope-od/indulgent-treats/maintainability)
+
+[![Coverage Status](https://coveralls.io/repos/github/tolulope-od/indulgent-treats/badge.svg?branch=develop)](https://coveralls.io/github/tolulope-od/indulgent-treats?branch=develop)
+
 
 # Website
 
