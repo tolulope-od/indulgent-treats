@@ -1,5 +1,7 @@
+/*
 import express from 'express';
-import MealsService from '../services/MealsService';
+import MealsService from '../services/meal.service';
+
 
 const mealsService = new MealsService();
 
@@ -14,3 +16,4 @@ router.get('/:id', (req, res) => {
 });
 
 export default router;
+*/
