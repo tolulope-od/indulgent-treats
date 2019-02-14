@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import mealsRoute from './server/routes/meal.route';
+import menuRoute from './server/routes/menu.route';
 
 // Set up the app with express
 const app = express();
@@ -13,6 +14,7 @@ app.get('/test', (req, res) => {
 app.use(bodyParser.json());
 
 app.use('/api/v1/meals', mealsRoute);
+app.use('/api/v1/menu', menuRoute);
 
 const PORT = 8080;
 

@@ -1,7 +1,7 @@
 import MealsService from '../services/meal.service';
 
 const MealController = {
-  fetAllMeals(req, res) {
+  fetchAllMeals(req, res) {
     const allMeals = MealsService.fetchAllMeals();
     return res.json({
       status: 'success',
