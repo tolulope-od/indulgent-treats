@@ -3,7 +3,7 @@ import MealController from '../controllers/meal.controller';
 
 const router = Router();
 
-router.get('/', MealController.fetAllMeals);
+router.get('/', MealController.fetchAllMeals);
 router.post('/', MealController.addAMeal);
 router.get('/:id', MealController.getSingleMeal);
 router.delete('/:id', MealController.deleteSingleMeal);
