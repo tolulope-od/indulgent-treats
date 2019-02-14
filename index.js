@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import mealsRoute from './server/routes/mealsRoute';
+import mealsRoute from './server/routes/meal.route';
 
 // Set up the app with express
 const app = express();
