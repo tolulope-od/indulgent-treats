@@ -25,13 +25,31 @@ const MealsService = {
 
   getAMeal(id) {
     // -1 because we have out data in an array, which starts at 0
-    return this.fetchAllMeals()[id - 1];
+    return this.fetchAllMeals()[id - 1] || {};
   },
 
-  delete(id) {
-    const meals = [...this.fetchAllMeals()];
-    meals.splice(meals.findIndex(meal => meal.id === id), 1);
-    return meals;
+  deleteAMeal(id) {
+    // eslint-disable-next-line eqeqeq
+    const toDelete = dummyData.meals.findIndex(meal => meal.id == id);
+    if (toDelete > -1) {
+      dummyData.meals.splice(toDelete, 1);
+      return dummyData;
+    }
+    return {};
+  },
+
+  editAMeal(id, newMeal) {
+    // eslint-disable-next-line eqeqeq
+    const index = dummyData.meals.findIndex(meal => meal.id == id);
+    const toEdit = dummyData.meals[index];
+    if (toEdit) {
+      toEdit.name = newMeal.name;
+      toEdit.price = newMeal.price;
+      toEdit.size = newMeal.size;
+
+      return toEdit;
+    }
+    return {};
   },
 };
 
