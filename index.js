@@ -1,4 +1,5 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 import mealsRoute from './server/routes/mealsRoute';
 
 // Set up the app with express
@@ -9,6 +10,8 @@ app.get('/test', (req, res) => {
   res.status(200).send('Response Returned Successfully');
 });
 */
+app.use(bodyParser.json());
+
 app.use('/api/v1/meals', mealsRoute);
 
 const PORT = 8080;
