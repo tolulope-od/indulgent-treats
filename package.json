@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/tolulope-od/indulgent-treats#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "chai": "^4.2.0",
     "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
