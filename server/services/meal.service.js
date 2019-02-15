@@ -33,7 +33,7 @@ const MealsService = {
     const toDelete = dummyData.meals.findIndex(meal => meal.id == id);
     if (toDelete > -1) {
       dummyData.meals.splice(toDelete, 1);
-      return dummyData;
+      return dummyData.meals;
     }
     return {};
   },

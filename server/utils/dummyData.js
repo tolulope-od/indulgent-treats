@@ -25,4 +25,25 @@ export default {
       price: '1500',
     },
   ],
+
+  orders: [
+    {
+      id: 1,
+      orderName: 'Jollof Rice',
+      amount: 500,
+      status: 'Processing',
+    },
+    {
+      id: 2,
+      orderName: 'Coconut Rice',
+      amount: 500,
+      status: 'Completed',
+    },
+    {
+      id: 3,
+      orderName: 'Hamburger',
+      amount: 1500,
+      status: 'Cancelled',
+    },
+  ],
 };
