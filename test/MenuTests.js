@@ -70,8 +70,19 @@ describe('Access Menu Services', () => {
     });
 
     describe('Add one meal to the menu', () => {
-      it('Should add a meal to the menu or return empty object if an existing or invalid meal is added', () => {
-        const menu = MenuService.addAMeal(3);
+      it('Should add a meal to the menu if the meal exists in the meal options', () => {
+        const menu = MenuService.addAMeal(2);
+
+        expect(menu).to.deep.equal({
+          id: 2,
+          name: 'Yamarita',
+          size: 'Large',
+          price: '700',
+        });
+      });
+
+      it('Should return empty object if an existing or invalid meal is added', () => {
+        const menu = MenuService.addAMeal(6);
 
         expect(menu).to.deep.equal({});
       });

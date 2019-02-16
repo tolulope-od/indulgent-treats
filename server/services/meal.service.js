@@ -24,8 +24,9 @@ const MealsService = {
   },
 
   getAMeal(id) {
-    // -1 because we have out data in an array, which starts at 0
-    return this.fetchAllMeals()[id - 1] || {};
+    // eslint-disable-next-line eqeqeq
+    const foundMeal = dummyData.meals.find(meal => meal.id == id);
+    return foundMeal || {};
   },
 
   deleteAMeal(id) {

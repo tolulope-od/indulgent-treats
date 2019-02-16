@@ -28,7 +28,7 @@ const MenuController = {
     }
     return res.json({
       status: 'Error',
-      message: 'Meal does not exist',
+      message: 'Bad request',
     }).status(400);
   },
 };
