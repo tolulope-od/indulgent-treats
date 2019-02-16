@@ -5,23 +5,29 @@ const OrderController = {
     const selectedMeal = req.body;
     const order = OrderService.placeOrder((selectedMeal));
     if (Object.entries(order).length !== 0) {
-      return res.json({
+      return res.status(200).json({
         status: 'success',
         data: order,
-      }).status(200);
+      });
     }
-    return res.json({
+    return res.status(400).json({
       status: 'Error',
       message: 'Meal Unavailable',
-    }).status(400);
+    });
   },
 
   fetchAllOrders(req, res) {
     const allOrders = OrderService.getAllOrders();
-    return res.json({
+
+    if (allOrders.length === 0) {
+      return res.status(200).json({
+        message: 'There are no orders at this time',
+      });
+    }
+    return res.status(200).json({
       status: 'success',
       data: allOrders,
-    }).status(200);
+    });
   },
 
   editAnOrder(req, res) {
@@ -30,15 +36,20 @@ const OrderController = {
     const editedOrder = OrderService.editOrder(id, info);
 
     if (Object.entries(editedOrder).length !== 0) {
-      return res.json({
+      if (info.toString().toLowerCase() !== 'processing' || info.toString().toLowerCase() !== 'cancelled' || info.toString().toLowerCase() !== 'completed') {
+        return res.status(200).json({
+          message: 'You have not updated the Order',
+        });
+      }
+      return res.status(200).json({
         status: 'success',
         data: editedOrder,
-      }).status(200);
+      });
     }
-    return res.json({
+    return res.status(400).json({
       status: 'Error',
       message: 'No order with that id found',
-    }).status(400);
+    });
   },
 };
 
