@@ -1,5 +1,5 @@
 import chai from 'chai';
-import MenuService from '../server/services/menu.service';
+import MenuService from '../server/dummyServices/menu.service';
 
 const { expect } = chai;
 

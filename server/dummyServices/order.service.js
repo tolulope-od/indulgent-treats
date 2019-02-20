@@ -1,4 +1,4 @@
-import Order from '../models/order.model';
+import Order from '../dummyModels/order.model';
 import dummyData from '../utils/dummyData';
 
 const { menu, orders } = dummyData;
