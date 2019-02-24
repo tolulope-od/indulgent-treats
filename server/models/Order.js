@@ -14,8 +14,12 @@ const order = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    address: {
+    quantity: {
       type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    address: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     status: {
