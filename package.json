@@ -11,10 +11,14 @@
     "instrument": false
   },
   "scripts": {
-    "start": "nodemon --exec babel-node index.js",
+    "start": "npm run build && node ./build/index.js",
     "dev": "nodemon --exec babel-node index.js",
+    "build-babel": "babel -d ./build index.js && babel ./server --out-dir build/server",
+    "build": "npm run clean && npm run build-babel",
+    "clean": "rm -rf build && mkdir build",
     "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text-lcov ./node_modules/.bin/mocha --exit --timeout 10000 --reporter spec --compilers js:@babel/register ./test/*.js",
-    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "heroku-postbuild": "NPM_CONFIG_PRODUTION=false npm install"
   },
   "repository": {
     "type": "git",
@@ -39,6 +43,7 @@
     "sequelize": "^4.42.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
