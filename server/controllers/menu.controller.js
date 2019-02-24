@@ -1,35 +1,62 @@
-import MenuService from '../dummyServices/menu.service';
+import models from '../models';
+
+const { Meal, Menu } = models;
 
 const MenuController = {
+/**
+*Gets menu
+*@param  {Object} req - request
+*@param  {object} res - response
+*@return {object} - status code and  message
+*/
   fetchMenu(req, res) {
-    const menu = MenuService.fetchMenu();
-    return res.status(200).json({
-      status: 'success',
-      data: menu,
-    });
+    Menu.findAll()
+      .then(menu => res.status(200).json({
+        status: 'success',
+        data: menu,
+      }));
   },
-
+  /**
+  *Sets up meny
+  *@param  {Object} req - request
+  *@param  {object} res - response
+  *@return {object} - status code and  message
+  */
   setupMenu(req, res) {
-    const meals = MenuService.setMenu();
-    return res.status(201).json({
-      status: 'success',
-      data: meals,
+    Meal.findAll().then((allMeals) => {
+      Menu.create({
+        day: new Date(),
+        meals: allMeals,
+      }).then(() => res.status(201).json({
+        status: 'success',
+        message: 'Menu set up successfully',
+      }));
     });
   },
-
+  /**
+  *Adds a meal to the menu
+  *@param  {Object} req - request
+  *@param  {object} res - response
+  *@return {object} - status code and  message
+  */
   addAMeal(req, res) {
     const { id } = req.params;
-    const addedMeal = MenuService.addAMeal(id);
-    if (Object.entries(addedMeal).length !== 0) {
-      return res.status(201).json({
-        status: 'success',
-        data: addedMeal,
+    Meal.findOne({ where: { id } })
+      .then((meal) => {
+        if (!meal) {
+          return res.status(400).json({
+            status: 'Error',
+            message: 'no meal with that id',
+          });
+        }
+        return Menu.create({
+          day: new Date(),
+          meals: meal,
+        }).then(() => res.status(201).json({
+          status: 'success',
+          message: 'Menu set up successfully',
+        }));
       });
-    }
-    return res.status(400).json({
-      status: 'Error',
-      message: 'Bad request',
-    });
   },
 };
 
