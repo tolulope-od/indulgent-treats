@@ -3,12 +3,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const sequelize = new Sequelize(process.env.DATABASE_NAME,
-  process.env.DATABASE_USER,
-  process.env.DATABASE_PASSWORD,
+const sequelize = new Sequelize(process.env.DATABASE_URL,
   {
-    host: 'localhost',
-    dialect: 'postgres',
     operatorsAliases: false,
   });
 
