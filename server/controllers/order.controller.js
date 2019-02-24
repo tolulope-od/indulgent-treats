@@ -1,4 +1,4 @@
-import OrderService from '../services/order.service';
+import OrderService from '../dummyServices/order.service';
 
 const OrderController = {
   placeAnOrder(req, res) {

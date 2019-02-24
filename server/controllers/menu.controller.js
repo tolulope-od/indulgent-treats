@@ -1,4 +1,4 @@
-import MenuService from '../services/menu.service';
+import MenuService from '../dummyServices/menu.service';
 
 const MenuController = {
   fetchMenu(req, res) {

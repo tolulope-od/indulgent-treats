@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import { sequelize } from './server/models';
 import mealsRoute from './server/routes/meal.route';
 import menuRoute from './server/routes/menu.route';
 import ordersRoute from './server/routes/order.route';
@@ -12,6 +13,7 @@ app.get('/test', (req, res) => {
   res.status(200).send('Response Returned Successfully');
 });
 */
+app.use(bodyParser({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/api/v1/meals', mealsRoute);
@@ -20,8 +22,20 @@ app.use('/api/v1/orders', ordersRoute);
 
 const PORT = 8080;
 
-// configure the app to listen on localhost
-app.listen(PORT, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Server Running on port ${PORT}`);
-});
+// configure the app to listen on localhost and connect o the DB
+const eraseDatabaseOnSync = false;
+
+sequelize.sync({ force: eraseDatabaseOnSync })
+  .then(() => {
+    // eslint-disable-next-line no-console
+    console.log('DB connected successfully');
+  })
+  .then(() => {
+    app.listen(PORT, () => {
+      // eslint-disable-next-line no-console
+      console.log(`Server Running on port ${PORT}`);
+    });
+    // eslint-disable-next-line no-console
+  }).catch(err => console.log(err));
+
+export default app;
