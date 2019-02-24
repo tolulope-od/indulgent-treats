@@ -1,14 +1,27 @@
-import MealsService from '../dummyServices/meal.service';
+import models from '../models';
+
+const { Meal } = models;
 
 const MealController = {
+/**
+  *Gets all meals
+  *@param  {Object} req - request
+  *@param  {object} res - response
+  *@return {object} - status code and  message
+  */
   fetchAllMeals(req, res) {
-    const allMeals = MealsService.fetchAllMeals();
-    return res.status(200).json({
+    Meal.findAll().then(meals => res.status(200).json({
       status: 'success',
-      data: allMeals,
-    });
+      data: meals,
+    }));
   },
 
+  /**
+  *Adds a meal
+  *@param  {Object} req - request
+  *@param  {object} res - response
+  *@return {object} - status code and  message
+  */
   addAMeal(req, res) {
     /*
     Expect json object with format:
@@ -19,57 +32,97 @@ const MealController = {
     }
     */
     const newMeal = req.body;
-    const createdMeal = MealsService.addMeal(newMeal);
-    return res.status(201).json({
+    Meal.create({
+      name: newMeal.name,
+      size: newMeal.size,
+      price: newMeal.price,
+      imageURL: newMeal.imageURL,
+    }).then(() => res.status(201).json({
       status: 'success',
-      data: createdMeal,
-    });
+      message: 'Meal created',
+      data: {
+        name: newMeal.name,
+        size: newMeal.size,
+        price: newMeal.price,
+      },
+    }));
   },
 
+  /**
+  *Gets a single meal
+  *@param  {Object} req - request
+  *@param  {object} res - response
+  *@return {object} - status code and  message
+  */
   getSingleMeal(req, res) {
     const { id } = req.params;
-    const foundMeal = MealsService.getAMeal(id);
-    if (Object.entries(foundMeal).length !== 0) {
-      return res.status(200).json({
-        status: 'success',
-        data: foundMeal,
+    Meal.findOne({ where: { id } })
+      .then((meal) => {
+        if (!meal) {
+          return res.status(400).json({
+            status: 'error',
+            message: 'that meal does not exist',
+          });
+        }
+        return res.status(200).json({
+          status: 'success',
+          data: meal,
+        });
       });
-    }
-    return res.status(400).json({
-      status: 'Error',
-      message: 'No meal with that id found',
-    });
   },
-
+  /**
+  *Deletes a meal
+  *@param  {Object} req - request
+  *@param  {object} res - response
+  *@return {object} - status code and  message
+  */
   deleteSingleMeal(req, res) {
     const { id } = req.params;
-    const deletedMeal = MealsService.deleteAMeal(id);
-    if (Object.entries(deletedMeal).length !== 0) {
-      return res.status(200).json({
-        status: 'success',
-        data: deletedMeal,
+    Meal.destroy({ where: { id } })
+      .then((meal) => {
+        if (!meal) {
+          return res.status(400).json({
+            status: 'error',
+            message: 'that meal does not exist',
+          });
+        }
+        return res.status(200).json({
+          status: 'success',
+          message: 'Meal Deleted',
+        });
       });
-    }
-    return res.status(400).json({
-      status: 'Error',
-      message: 'No meal with that id found',
-    });
   },
-
+  /**
+  *Edits a meal
+  *@param  {Object} req - request
+  *@param  {object} res - response
+  *@return {object} - status code and  message
+  */
   editAMeal(req, res) {
     const { id } = req.params;
-    const newMeal = req.body;
-    const editedMeal = MealsService.editAMeal(id, newMeal);
-    if (Object.entries(editedMeal).length !== 0) {
-      return res.status(200).json({
-        status: 'success',
-        data: editedMeal,
+    const editedMeal = req.body;
+    Meal.find({ where: { id } })
+      .then((meal) => {
+        if (!meal) {
+          return res.status(400).json({
+            status: 'error',
+            message: 'that meal does not exist',
+          });
+        }
+
+        return Meal.update({
+          name: editedMeal.name,
+          price: editedMeal.price,
+          size: editedMeal.size,
+          imageURL: editedMeal.imageURL,
+        },
+        {
+          where: { id },
+        }).then(() => res.status(200).json({
+          status: 'success',
+          data: meal,
+        }));
       });
-    }
-    return res.status(400).json({
-      status: 'Error',
-      message: 'No meal with that id found',
-    });
   },
 };
 

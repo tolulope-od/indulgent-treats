@@ -12,6 +12,7 @@
   },
   "scripts": {
     "start": "nodemon --exec babel-node index.js",
+    "dev": "nodemon --exec babel-node index.js",
     "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text-lcov ./node_modules/.bin/mocha --exit --timeout 10000 --reporter spec --compilers js:@babel/register ./test/*.js",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
