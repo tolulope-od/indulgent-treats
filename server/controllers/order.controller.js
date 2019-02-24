@@ -1,55 +1,52 @@
-import OrderService from '../dummyServices/order.service';
+import models from '../models';
+
+const { Order, Meal } = models;
 
 const OrderController = {
   placeAnOrder(req, res) {
     const selectedMeal = req.body;
-    const order = OrderService.placeOrder((selectedMeal));
-    if (Object.entries(order).length !== 0) {
-      return res.status(200).json({
-        status: 'success',
-        data: order,
-      });
-    }
-    return res.status(400).json({
-      status: 'Error',
-      message: 'Meal Unavailable',
-    });
+    Meal.findOne({ where: { id: selectedMeal.id } })
+      .then((meal) => {
+        Order.create({
+          order: meal,
+          amount: meal.price * selectedMeal.quantity,
+          quantity: selectedMeal.quantity,
+          address: selectedMeal.address,
+        }).then(order => res.status(200).json({
+          status: 'success',
+          data: order,
+        }));
+      })
+      .catch(err => res.status(400).json({
+        status: 'Error',
+        message: err,
+      }));
   },
 
   fetchAllOrders(req, res) {
-    const allOrders = OrderService.getAllOrders();
-
-    if (allOrders.length === 0) {
-      return res.status(200).json({
-        message: 'There are no orders at this time',
-      });
-    }
-    return res.status(200).json({
+    Order.findAll().then(orders => res.status(200).json({
       status: 'success',
-      data: allOrders,
-    });
+      data: orders,
+    }));
   },
 
   editAnOrder(req, res) {
     const { id } = req.params;
-    const info = req.body;
-    const editedOrder = OrderService.editOrder(id, info);
-
-    if (Object.entries(editedOrder).length !== 0) {
-      if (info.toString().toLowerCase() !== 'processing' || info.toString().toLowerCase() !== 'cancelled' || info.toString().toLowerCase() !== 'completed') {
-        return res.status(200).json({
-          message: 'You have not updated the Order',
-        });
-      }
-      return res.status(200).json({
-        status: 'success',
-        data: editedOrder,
+    const newStatus = req.body;
+    Order.findOne({ where: { id } })
+      .then((order) => {
+        if (!order) {
+          return res.status(400).json({
+            status: 'Error',
+            message: 'No order with that id found',
+          });
+        }
+        return Order.update({ status: newStatus.status }, { where: { id } })
+          .then(() => res.status(200).json({
+            status: 'success',
+            data: order,
+          }));
       });
-    }
-    return res.status(400).json({
-      status: 'Error',
-      message: 'No order with that id found',
-    });
   },
 };
 
