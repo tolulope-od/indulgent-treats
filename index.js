@@ -21,7 +21,7 @@ app.use('/api/v1/meals', mealsRoute);
 app.use('/api/v1/menu', menuRoute);
 app.use('/api/v1/orders', ordersRoute);
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.static('UI/'));
 
